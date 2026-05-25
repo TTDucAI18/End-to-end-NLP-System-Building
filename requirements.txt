@@ -2,6 +2,3 @@ numpy
 scipy
 scikit-learn
 joblib
-torch
-transformers
-accelerate

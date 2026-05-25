@@ -39,15 +39,13 @@ Outputs:
 - Public knowledge resource: cleaned chunks from `data/raw` can be indexed as supporting documents.
 - Reader: extractive answer selection with short-answer post-processing.
 
-Additional robustness track:
+Additional raw-index track:
 
 ```powershell
 python -m src.preprocess_raw --raw-dir data\raw --output processed\raw_docs.jsonl
 python -m src.raw_rag train --processed processed\raw_docs.jsonl --data-dir data_distinct --model models\raw_rag_distinct.joblib
-python -m src.qwen_reader --rag-model models\raw_rag_distinct.joblib --questions data_distinct\test\questions.txt --output reports\qwen_raw_output.txt
+python -m src.raw_rag predict --model models\raw_rag_distinct.joblib --questions data_distinct\test\questions.txt --output reports\raw_rag_output.txt
 ```
-
-The Qwen reader is optional and CPU-heavy. It uses retrieved raw context and does not read test reference answers during prediction.
 
 ## Submission Format
 
