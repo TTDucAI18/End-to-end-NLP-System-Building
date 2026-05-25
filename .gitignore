@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+
+# Generated models and indexes
+models/
+artifacts/
+processed/
+
+# Large/debug run outputs
+reports/*debug*.jsonl
+reports/*backup*.txt
+reports/*output*.txt
+
+# Local submission package placeholders
+ANDREWID/
+
+# Environment files
+.env
+.venv/
+venv/
